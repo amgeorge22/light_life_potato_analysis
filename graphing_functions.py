@@ -135,3 +135,32 @@ def get_solanine_breakdown(solanine, not_solanine, aged_potatoes, fresh_potatoes
         fresh_blue_non_sol_vals.append(fresh_colors[2])
 
     return aged_red_sol_vals, aged_green_sol_vals, aged_blue_sol_vals, fresh_red_sol_vals, fresh_green_sol_vals, fresh_blue_sol_vals, aged_red_non_sol_vals, aged_green_non_sol_vals, aged_blue_non_sol_vals, fresh_red_non_sol_vals, fresh_green_non_sol_vals, fresh_blue_non_sol_vals
+
+def display_spectra(freshx, freshy, oldx, oldy, veryoldx, veryoldy):
+        """
+        freshx: the frequency data for the fresh potatoes
+        freshy: the intensity data for the fresh potatoes
+        oldx: the frequency data for the old potatoes
+        oldy: the intensity data for the old potatoes
+        veryoldx: the frequency data for the very old potatoes
+        veryoldy: the intensity data for the very old potatoes
+        """
+
+        # Marker size to use for plot
+        size = 1
+
+        # Plot data
+        fig, ax = plt.subplots(figsize =(15, 4))
+        plt.scatter(freshx, freshy, s=size)
+        plt.scatter(oldx, oldy, s=size)
+        plt.scatter(veryoldx, veryoldy, s=size)
+
+        # Add a title, axis labels, and legend to the plot
+        ax.set_title('Spectrum of Potatoes')
+        ax.set_xlabel('Frequency')
+        ax.set_ylabel('Intensity')
+        ax.legend(["Fresh", "Old", "Very Old"])
+        
+        # Display the plot
+        plt.show()
+    
